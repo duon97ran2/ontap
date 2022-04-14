@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "name": "sasdasd",
+      "price": 3,
+      "desc": "sasdasd",
+      "img": "sasdasd",
+      "id": "saasd"
+    },
+    {
+      "name": "sasdasd",
+      "price": 3,
+      "desc": "sasdasd",
+      "img": "sasdasd",
+      "id": "sad"
+    },
+    {
+      "name": "dasdasd",
+      "price": 3,
+      "img": "asdasdas",
+      "desc": "sadasdsad",
+      "id": "rmezlK9"
+    },
+    {
+      "name": "asdasd",
+      "price": 30000,
+      "img": "asdasdas",
+      "desc": "231213",
+      "id": "P10ue7r"
+    }
+  ],
+  "users": [
+    {
+      "email": "manutd0097@gmail.com",
+      "password": "$2a$10$vNFnaHsDpgmiluEdseu1u.9nwWNGNVVOVEwkUThlnruJOCikBi3D.",
+      "id": 1
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$znfJVc8q8PdvZsrTyHmKfu1ukSiUHcWfMNSR0FvCv99RtZX94wChW",
+      "id": 2,
+      "role": 1
+    }
+  ]
+}
