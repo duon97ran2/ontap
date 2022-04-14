@@ -20,7 +20,7 @@ type Inputs = {
 const Add = (props: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const navigate = useNavigate();
-  const onSubmit = (post: ProductType) => {
+  const onSubmit = (post: Inputs) => {
     const addProduct = async () => {
       const { data } = await axios.post("http://localhost:3001/products", post);
       message.success("add product success", 2, () => { navigate("/products") });

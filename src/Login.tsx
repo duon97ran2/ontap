@@ -5,7 +5,9 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { StyledFormGroup } from './styleComponent'
 
-type Props = {}
+type Props = {
+  setRole: (result: any) => void;
+}
 type Inputs = {
   email: string,
   password: string
@@ -14,11 +16,12 @@ type Inputs = {
 const Login = (props: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const navigate = useNavigate();
-  const handleForm = (post) => {
+  const handleForm = (post: Inputs) => {
     const asyncLogin = async () => {
       axios.post("http://localhost:3001/login", post).then(({ data }) => {
         console.log(data)
         localStorage.setItem("user", JSON.stringify(data));
+        props.setRole(data.user.role);
         message.success("Login success", 2, () => { navigate("/") })
       }).catch((error) => { console.log(error) })
     }

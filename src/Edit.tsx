@@ -21,7 +21,7 @@ const Edit = (props: Props) => {
   const { register, reset, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const { id } = useParams();
   const navigate = useNavigate();
-  const onSubmit = (post: ProductType) => {
+  const onSubmit = (post: any) => {
     const updateProduct = async () => {
       const { data } = await axios.put(`http://localhost:3001/products/${id}`, post);
       message.success("update product success", 2, () => { navigate("/products") });

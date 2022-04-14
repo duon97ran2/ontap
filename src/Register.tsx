@@ -14,7 +14,7 @@ type Inputs = {
 const Register = (props: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const navigate = useNavigate();
-  const handleForm = (post) => {
+  const handleForm = (post: Inputs) => {
     const asyncRegister = async () => {
       axios.post("http://localhost:3001/register", post).then(() => { message.success("Register success", 2, () => { navigate("/login") }) }).catch((error) => { console.log(error) })
     }

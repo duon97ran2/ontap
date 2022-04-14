@@ -14,13 +14,10 @@ import Register from './Register'
 import PrivateRouter from './PrivateRouter'
 
 function App() {
-  const userInfo = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : "";
   const [role, setRole] = useState<number>(0);
-  useEffect(() => {
-    if (!userInfo) return
-    setRole(userInfo.user.role);
+  const handleRole = (result: any) => {
+    setRole(result);
   }
-    , [userInfo])
   return (
     <BrowserRouter>
       <Routes>
@@ -34,7 +31,7 @@ function App() {
           </Route>
 
         </Route>
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={<Login setRole={handleRole} />} />
         <Route path='register' element={<Register />} />
       </Routes>
     </BrowserRouter>
